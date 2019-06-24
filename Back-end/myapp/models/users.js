@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 let userSchema = new Schema({
     name: String,
-    desc:String,
+    meaning:String,
+    IPA:String,
+    sentences:String,
+    image:String,
     tasks:[{
         type:Schema.Types.ObjectId,
         ref: 'task'

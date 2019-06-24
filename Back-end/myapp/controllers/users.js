@@ -19,5 +19,11 @@ module.exports = {
             .catch(err => {
                 next(err);
             })
+    },
+    DeleteUser: (req, res, next) => {
+        Users.remove(req.body)
+            .then(users => {
+                res.status(200).json(users);
+            })
     }
 }
