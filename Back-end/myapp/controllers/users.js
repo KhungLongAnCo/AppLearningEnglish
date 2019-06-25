@@ -25,5 +25,15 @@ module.exports = {
             .then(users => {
                 res.status(200).json(users);
             })
+    },
+    FindUser: (req, res, next) => {
+        let id = req.params.id;
+        Users.find({ _id: id })
+            .then(user => {
+                res.status(200).json(user);
+            })
+            .catch(err => {
+                next(err);
+            })
     }
 }
